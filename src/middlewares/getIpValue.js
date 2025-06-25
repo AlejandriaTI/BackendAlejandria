@@ -1,6 +1,6 @@
 
 
-export const getIp=async(req)=>{
+function getIp(req){
     if(req.headers['cf-connecting-ip']){
         return req.headers['cf-connecting-ip']
     }
@@ -11,3 +11,5 @@ export const getIp=async(req)=>{
 
     return req.ip
 }
+
+module.exports=getIp

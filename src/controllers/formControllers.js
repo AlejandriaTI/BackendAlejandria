@@ -1,15 +1,14 @@
-import { getIp } from '../middlewares/getIpValue'
-
+const getIp=require('../middlewares/getIpValue')
 const FormService=require('../services/formServices')
 const formService=new FormService()
 
-export const controllerConvertorApi=async(req,res)=>{
+const controllerConvertorApi=async(req,res)=>{
     try{
     const data=req.body
     const userAgent=req.headers['user-agent']
-    const {nombres,apellidos,servicio,carrera,universidad,whatsapp,url}=data
+    const {nombres,apellidos,servicio,carrera,universidad,telefono,url}=data
     
-    if(!nombres||!apellidos||!carrera||!universidad||!whatsapp||!url){
+    if(!nombres||!apellidos||!carrera||!universidad||!telefono||!url){
         return res.status(400).json({"message":"Faltan enviar campos"})
     }
 
@@ -23,3 +22,5 @@ export const controllerConvertorApi=async(req,res)=>{
         return res.status(400).json({error:err.message})
     }
 }
+
+module.exports=controllerConvertorApi
