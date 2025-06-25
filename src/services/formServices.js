@@ -1,4 +1,3 @@
-const axios=require('axios')
 const HttpClientAdapter=require('../adapters/httpClient.adapter')
 const hashSHA256=require('../middlewares/cryptoHash')
 
@@ -21,7 +20,7 @@ class formService{
                     "event_name":"Lead",
                     "event_time":Math.floor(Date.now()/1000),
                     "action_source":"website",
-                    "event_source_url":`https://alejandriaconsultora.com/${data.url}`,
+                    "event_source_url":`https://alejandriaconsultora.com/`,
                     "user_data":{
                         fn:[hashSHA256(data.nombres)],
                         ln:[hashSHA256(data.apellidos)],

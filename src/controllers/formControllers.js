@@ -8,7 +8,7 @@ const controllerConvertorApi=async(req,res)=>{
     const userAgent=req.headers['user-agent']
     const {nombres,apellidos,servicio,carrera,universidad,telefono,url}=data
     
-    if(!nombres||!apellidos||!carrera||!universidad||!telefono||!url){
+    if(!nombres||!apellidos||!carrera||!universidad||!telefono){
         return res.status(400).json({"message":"Faltan enviar campos"})
     }
 
